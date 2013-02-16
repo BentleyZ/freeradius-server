@@ -331,8 +331,8 @@ static void rad_mangle(rlm_preprocess_t *data, REQUEST *request)
 
 	num_proxy_state = 0;
 	for (tmp = request->packet->vps; tmp != NULL; tmp = tmp->next) {
-		if (tmp->vendor != 0) continue;
-		if (tmp->attribute != PW_PROXY_STATE) continue;
+		if (tmp->da->vendor != 0) continue;
+		if (tmp->da->attr != PW_PROXY_STATE) continue;
 
 		num_proxy_state++;
 	}
